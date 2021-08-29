@@ -24,9 +24,10 @@ async function renderVehicleData(vehicle_url){
                   <p> Vehicle Class: <span>${vehicle.starship_class}</span></p>
              </div>`
 
-    html += await listPeople(vehicle, "pilots");
-    html += await listFilms(vehicle);
+    html += await listPeople(vehicle, "pilots"); //display list of pilots of this vehicle
+    html += await listFilms(vehicle); //display list of films this vehicle is in
 
+    //write all the data onto the page and scroll page all the way up
     let container = document.querySelector('.container');
     container.innerHTML = html;
     window.scrollTo(0,0);
@@ -60,9 +61,10 @@ async function renderStarshipData(starship_url){
                   <p> Starship Class: <span>${starship.starship_class}</span></p>
              </div>`
 
-    html += await listPeople(starship, "pilots");
-    html += await listFilms(starship);
+    html += await listPeople(starship, "pilots"); //display list of pilots for the starship
+    html += await listFilms(starship); //list of films this starship is in
 
+    //write all the data onto the page and scroll page all the way up
     let container = document.querySelector('.container');
     container.innerHTML = html;
     window.scrollTo(0,0);
@@ -100,9 +102,10 @@ async function renderSpeciesData(species_url){
                 ${planet.name}
             </button>`
 
-    html += await listPeople(planet, "residents");
-    html += await listFilms(planet);
+    html += await listPeople(species, "people"); //display list of people who are of this species
+    html += await listFilms(species); //display list of films this species is in
 
+    //write all the data onto the page and scroll page all the way up
     let container = document.querySelector('.container');
     container.innerHTML = html;
     window.scrollTo(0,0);
@@ -132,9 +135,10 @@ async function renderPlanetData(planet_url) {
                   <p> Population: <span>${planet.population}</span></p>
              </div>`
 
-    html += await listPeople(planet, "residents");
-    html += await listFilms(planet);
+    html += await listPeople(planet, "residents"); //display list of residents of this planet
+    html += await listFilms(planet); //display list of films that take place in this planet
 
+    //write all the data onto the page and scroll page all the way up
     let container = document.querySelector('.container');
     container.innerHTML = html;
     window.scrollTo(0,0);
@@ -165,12 +169,13 @@ async function renderFilmData(film_url) {
                   <p> Producer: <span>${film.producer}</span> </p>
              </div>`
 
-    html += await listPeople(film, "characters");     //display list of persons in the film
-    html += await listPlanets(film);    //display list of planets
-    html += await listStarships(film);    //display list of starships
-    html += await listVehicles(film);    //display list of vehicles
-    html += await listSpecies(film);    //display list of species
+    html += await listPeople(film, "characters");     //display list of characters that appear in this film
+    html += await listPlanets(film);    //display list of planets this film takes place in
+    html += await listStarships(film);    //display list of starships that appear in this film
+    html += await listVehicles(film);    //display list of vehicles that appear in this film
+    html += await listSpecies(film);    //display list of species that appear in this film
 
+    //write all the data onto the page and scroll page all the way up
     let container = document.querySelector('.container');
     container.innerHTML = html;
     window.scrollTo(0,0);
@@ -205,11 +210,12 @@ async function renderPersonData(person_url) {
                 ${planet.name}
             </button>`
 
-    html += await listFilms(person);     //display list of films the person is in (as buttons)
-    html += await listSpecies(person);     //display list of species
-    html += await listVehicles(person);    //display list of vehicles
-    html += await listStarships(person);     //display list of starships
+    html += await listFilms(person);     //display list of films the person is in
+    html += await listSpecies(person);     //display the species this person belongs to
+    html += await listVehicles(person);    //display list of vehicles this person uses
+    html += await listStarships(person);     //display list of starships this person uses
 
+    //write all the data onto the page and scroll page all the way up
     let container = document.querySelector('.container');
     container.innerHTML = html;
     window.scrollTo(0,0);
