@@ -1,5 +1,7 @@
 /*
- * vehicles page
+ * Vehicle page
+ * Displays the data for a specific vehicle
+ * Params: vehicle_url - url to fetch specific vehicle's data
  */
 async function renderVehicleData(vehicle_url){
     let url_data = await fetch(vehicle_url);
@@ -32,6 +34,8 @@ async function renderVehicleData(vehicle_url){
 
 /*
  * Starship page
+ * Display the data for a specific starship
+ * Params: starship_url - url to fetch specific starship's data
  */
 async function renderStarshipData(starship_url){
     let url_data = await fetch(starship_url);
@@ -66,6 +70,8 @@ async function renderStarshipData(starship_url){
 
 /*
  * Species page
+ * Display the data for a specific species
+ * Params: species_url - url to fetch specific species data
  */
 async function renderSpeciesData(species_url){
     let url_data = await fetch(species_url);
@@ -104,6 +110,8 @@ async function renderSpeciesData(species_url){
 
 /*
  * Planet page
+ * Display the data for a specific planet
+ * Params: planet_url - url to fetch specific planet's data
  */
 async function renderPlanetData(planet_url) {
     let url_data = await fetch(planet_url);
@@ -134,6 +142,8 @@ async function renderPlanetData(planet_url) {
 
 /*
  * Film page
+ * Display the data for a specific film
+ * Params: film_url - url to fetch specific film's data
  */
 async function renderFilmData(film_url) {
     let url_data = await fetch(film_url);
@@ -167,7 +177,9 @@ async function renderFilmData(film_url) {
 }
 
 /*
- * person page
+ * Person page
+ * Display the data for a specific person/character
+ * Params: person_url - url to fetch specific person's data
  */
 async function renderPersonData(person_url) {
     let url_data = await fetch(person_url);
@@ -204,7 +216,9 @@ async function renderPersonData(person_url) {
 }
 
 
-//try to create separate functions for: list films, list persons, list vehicles, ...
+/* List elements in the films array
+ * Params: object - specific person/vehicle/starship/planet/species
+ */
 async function listFilms (object) {
     let html = '';
     html += `<p> List of Films: </p>`
@@ -223,6 +237,9 @@ async function listFilms (object) {
     }return html;
 }
 
+/* List elements in the people/characters/pilots array
+ * Params: object - specific film/vehicle/starship/planet/species
+ */
 async function listPeople (object, id_name) {
     let html = '';
     let people = '';
@@ -248,6 +265,9 @@ async function listPeople (object, id_name) {
     }return html;
 }
 
+/* List elements in the planets array
+ * Params: object - specific film
+ */
 async function listPlanets (object) {
     let html = '';
     html += `<p> List of Planets: </p>`
@@ -266,6 +286,9 @@ async function listPlanets (object) {
     }return html;
 }
 
+/* List elements in the starships array
+ * Params: object - specific person/film
+ */
 async function listStarships (object) {
     let html = '';
     html += `<p> List of Starships: </p>`
@@ -284,6 +307,9 @@ async function listStarships (object) {
     }return html;
 }
 
+/* List elements in the vehicles array
+ * Params: object - specific person/film
+ */
 async function listVehicles (object) {
     let html = '';
     html += `<p> List of Vehicles: </p>`
@@ -303,6 +329,9 @@ async function listVehicles (object) {
     return html;
 }
 
+/* List elements in the species array
+ * Params: object - specific person/film
+ */
 async function listSpecies (object) {
     let html = '';
     html += `<p> List of Species: </p>`
@@ -322,5 +351,7 @@ async function listSpecies (object) {
     return html
 }
 
+
+// home page: Luke Skywalker Data
 let url = "https://swapi.dev/api/people/1/"
 renderPersonData(url);
