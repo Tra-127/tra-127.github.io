@@ -53,7 +53,7 @@ button:hover {
     font-weight:bold;
 }
 
-.loader {
+#loader {
     position: absolute;
     left: 50%;
     top: 50%;

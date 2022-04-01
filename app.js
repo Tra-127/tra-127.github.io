@@ -8,8 +8,7 @@ async function renderVehicleData(vehicle_url){
 
     let url_data = await fetch(vehicle_url);
     let vehicle = await url_data.json();
-
-    <div style="display:none;" id="myDiv" class="animate-bottom"></div>
+    
 
     //display planet title
     let html = `<h2> ${vehicle.name}</h2>`
@@ -43,6 +42,8 @@ async function renderVehicleData(vehicle_url){
  * Params: starship_url - url to fetch specific starship's data
  */
 async function renderStarshipData(starship_url){
+    <div id="loader"></div>
+
     let url_data = await fetch(starship_url);
     let starship = await url_data.json();
 
@@ -80,6 +81,8 @@ async function renderStarshipData(starship_url){
  * Params: species_url - url to fetch specific species data
  */
 async function renderSpeciesData(species_url){
+    <div id="loader"></div>
+
     let url_data = await fetch(species_url);
     let species = await url_data.json();
 
@@ -121,6 +124,8 @@ async function renderSpeciesData(species_url){
  * Params: planet_url - url to fetch specific planet's data
  */
 async function renderPlanetData(planet_url) {
+    <div id="loader"></div>
+
     let url_data = await fetch(planet_url);
     let planet = await url_data.json();
 
