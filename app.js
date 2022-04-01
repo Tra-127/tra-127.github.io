@@ -4,8 +4,12 @@
  * Params: vehicle_url - url to fetch specific vehicle's data
  */
 async function renderVehicleData(vehicle_url){
+    <div id="loader"></div>
+
     let url_data = await fetch(vehicle_url);
     let vehicle = await url_data.json();
+
+    <div style="display:none;" id="myDiv" class="animate-bottom"></div>
 
     //display planet title
     let html = `<h2> ${vehicle.name}</h2>`
