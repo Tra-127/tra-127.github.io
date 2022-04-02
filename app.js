@@ -375,3 +375,4 @@ async function listSpecies (object) {
 // home page: Luke Skywalker Data
 let url = "https://swapi.dev/api/people/1/"
 renderPersonData(url);
+
