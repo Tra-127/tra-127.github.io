@@ -4,8 +4,8 @@
  * Params: vehicle_url - url to fetch specific vehicle's data
  */
 async function renderVehicleData(vehicle_url){
-    let html = '<div id="loader"></div>';
-    /*
+    //let html = '<div id="loader"></div>';
+    
     let url_data = await fetch(vehicle_url);
     let vehicle = await url_data.json();
     
@@ -29,7 +29,7 @@ async function renderVehicleData(vehicle_url){
 
     html += await listPeople(vehicle, "pilots"); //display list of pilots of this vehicle
     html += await listFilms(vehicle); //display list of films this vehicle is in
-   */
+    
     //write all the data onto the page and scroll page all the way up
     let container = document.querySelector('.container');
     container.innerHTML = html;
@@ -199,13 +199,13 @@ async function renderFilmData(film_url) {
  * Params: person_url - url to fetch specific person's data
  */
 async function renderPersonData(person_url) {
-    <div id="loader"></div>
+    let html = '<div id="loader"></div>';
 
     let url_data = await fetch(person_url);
     let person = await url_data.json();
 
     //display person information
-    let html = `<h2> ${person.name} </h2>`
+    html = `<h2> ${person.name} </h2>`
 
     let homeworld = await fetch(person.homeworld) //get home-world data to get name of the planet
     let  planet = await homeworld.json();
