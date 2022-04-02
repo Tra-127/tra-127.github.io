@@ -7,7 +7,6 @@ async function loader(){
     //write all the data onto the page and scroll page all the way up
     let container = document.querySelector('.container');
     container.innerHTML = html;
-    window.scrollTo(0,0);
 }
 
 /*
