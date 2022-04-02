@@ -1,11 +1,24 @@
 /*
+ * Display Loading circle while we wait for data to get fetched
+ */
+async function loader(){
+    let html='<div class="loader"></div>';
+
+    //write all the data onto the page and scroll page all the way up
+    let container = document.querySelector('.container');
+    container.innerHTML = html;
+    window.scrollTo(0,0);
+}
+
+/*
  * Vehicle page
  * Displays the data for a specific vehicle
  * Params: vehicle_url - url to fetch specific vehicle's data
  */
 async function renderVehicleData(vehicle_url){
-    let html = '<div id="loader"></div>';
-    /*
+    
+    loader()
+    
     let url_data = await fetch(vehicle_url);
     let vehicle = await url_data.json();
     
@@ -29,7 +42,7 @@ async function renderVehicleData(vehicle_url){
 
     html += await listPeople(vehicle, "pilots"); //display list of pilots of this vehicle
     html += await listFilms(vehicle); //display list of films this vehicle is in
-   */
+    
     //write all the data onto the page and scroll page all the way up
     let container = document.querySelector('.container');
     container.innerHTML = html;
@@ -43,7 +56,8 @@ async function renderVehicleData(vehicle_url){
  * Params: starship_url - url to fetch specific starship's data
  */
 async function renderStarshipData(starship_url){
-    <div id="loader"></div>
+
+    loader();
 
     let url_data = await fetch(starship_url);
     let starship = await url_data.json();
@@ -82,7 +96,8 @@ async function renderStarshipData(starship_url){
  * Params: species_url - url to fetch specific species data
  */
 async function renderSpeciesData(species_url){
-    <div id="loader"></div>
+
+    loader();
 
     let url_data = await fetch(species_url);
     let species = await url_data.json();
@@ -125,7 +140,8 @@ async function renderSpeciesData(species_url){
  * Params: planet_url - url to fetch specific planet's data
  */
 async function renderPlanetData(planet_url) {
-    <div id="loader"></div>
+
+    loader();
 
     let url_data = await fetch(planet_url);
     let planet = await url_data.json();
@@ -160,7 +176,8 @@ async function renderPlanetData(planet_url) {
  * Params: film_url - url to fetch specific film's data
  */
 async function renderFilmData(film_url) {
-    let htm = '<div id="loader"></div>';
+
+    loader();
 
     let url_data = await fetch(film_url);
     let film = await url_data.json();
@@ -199,14 +216,19 @@ async function renderFilmData(film_url) {
  * Params: person_url - url to fetch specific person's data
  */
 async function renderPersonData(person_url) {
-    <div id="loader"></div>
+
+    loader();
 
     let url_data = await fetch(person_url);
     let person = await url_data.json();
 
     //display person information
-    let html = `<h2> ${person.name} </h2>`
 
+    //<div style="display:none;" id="myDiv" class="animate-bottom"></div>
+
+    let html = `<h2> ${person.name} </h2>`;
+
+    
     let homeworld = await fetch(person.homeworld) //get home-world data to get name of the planet
     let  planet = await homeworld.json();
     html += `<div class="body">
@@ -228,11 +250,13 @@ async function renderPersonData(person_url) {
     html += await listSpecies(person);     //display the species this person belongs to
     html += await listVehicles(person);    //display list of vehicles this person uses
     html += await listStarships(person);     //display list of starships this person uses
+    
 
     //write all the data onto the page and scroll page all the way up
     let container = document.querySelector('.container');
     container.innerHTML = html;
     window.scrollTo(0,0);
+
 }
 
 
