@@ -4,12 +4,12 @@
  * Params: vehicle_url - url to fetch specific vehicle's data
  */
 async function renderVehicleData(vehicle_url){
-    <div id="loader"></div>
-
+    let html = '<div id="loader"></div>';
+    /*
     let url_data = await fetch(vehicle_url);
     let vehicle = await url_data.json();
     
-    /* 
+     
     //display planet title
     let html = `<h2> ${vehicle.name}</h2>`
 
@@ -29,12 +29,12 @@ async function renderVehicleData(vehicle_url){
 
     html += await listPeople(vehicle, "pilots"); //display list of pilots of this vehicle
     html += await listFilms(vehicle); //display list of films this vehicle is in
-
+   */
     //write all the data onto the page and scroll page all the way up
     let container = document.querySelector('.container');
     container.innerHTML = html;
     window.scrollTo(0,0);
-    */
+ 
 }
 
 /*
