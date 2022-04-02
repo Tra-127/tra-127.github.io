@@ -199,13 +199,12 @@ async function renderFilmData(film_url) {
  * Params: person_url - url to fetch specific person's data
  */
 async function renderPersonData(person_url) {
-    let html = '<div id="loader"></div>';
-
+    
     let url_data = await fetch(person_url);
     let person = await url_data.json();
 
     //display person information
-    html = `<h2> ${person.name} </h2>`
+    let html = `<h2> ${person.name} </h2>`
 
     let homeworld = await fetch(person.homeworld) //get home-world data to get name of the planet
     let  planet = await homeworld.json();
