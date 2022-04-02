@@ -16,8 +16,12 @@ async function loader(){
  * Params: vehicle_url - url to fetch specific vehicle's data
  */
 async function renderVehicleData(vehicle_url){
+<<<<<<< HEAD
     
     loader()
+=======
+    //let html = '<div id="loader"></div>';
+>>>>>>> 65a5734abc5f7360c318c06210ea561fcd93f3e0
     
     let url_data = await fetch(vehicle_url);
     let vehicle = await url_data.json();
@@ -216,9 +220,13 @@ async function renderFilmData(film_url) {
  * Params: person_url - url to fetch specific person's data
  */
 async function renderPersonData(person_url) {
+<<<<<<< HEAD
 
     loader();
 
+=======
+    
+>>>>>>> 65a5734abc5f7360c318c06210ea561fcd93f3e0
     let url_data = await fetch(person_url);
     let person = await url_data.json();
 
@@ -399,3 +407,4 @@ async function listSpecies (object) {
 // home page: Luke Skywalker Data
 let url = "https://swapi.dev/api/people/1/"
 renderPersonData(url);
+
