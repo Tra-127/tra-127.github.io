@@ -159,7 +159,7 @@ async function renderPlanetData(planet_url) {
  * Params: film_url - url to fetch specific film's data
  */
 async function renderFilmData(film_url) {
-    <div id="loader"></div>
+    let htm = '<div id="loader"></div>';
 
     let url_data = await fetch(film_url);
     let film = await url_data.json();
