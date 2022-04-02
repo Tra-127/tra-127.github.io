@@ -9,7 +9,7 @@ async function renderVehicleData(vehicle_url){
     let url_data = await fetch(vehicle_url);
     let vehicle = await url_data.json();
     
-
+    /* 
     //display planet title
     let html = `<h2> ${vehicle.name}</h2>`
 
@@ -34,6 +34,7 @@ async function renderVehicleData(vehicle_url){
     let container = document.querySelector('.container');
     container.innerHTML = html;
     window.scrollTo(0,0);
+    */
 }
 
 /*
